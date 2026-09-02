@@ -32,3 +32,20 @@
 ---
 
 Keep this card for quick reference when hardening prompts for production.
+
+## Structured outputs — Summary
+
+- What: supply a JSON schema to the API so output is token-constrained to match it (constrained decoding).
+- When to use:
+  - `json_schema` for machine-readable responses your code consumes.
+  - `strict` tool inputs to validate agent tool calls before execution.
+- Why: prevents stray text, wrong field names, and removes parse-and-retry loops.
+- Trade-offs:
+  - First-call latency (schema compiles to a grammar; cached ~24h).
+  - Slightly higher input token billing (injected schema prompt).
+  - Not foolproof: `refusal` or `max_tokens` truncation can still produce non-matching output; always check `stop_reason`.
+  - Incompatible with assistant message prefilling; choose one approach per request.
+
+---
+
+Use structured outputs when you need production-grade, machine-parseable reliability.
