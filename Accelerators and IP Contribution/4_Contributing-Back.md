@@ -1,6 +1,3 @@
-Moving an asset from private reuse into shared infrastructure a maintainer accepts
-You have already done most of the work that makes an asset shareable. When you packaged it for your own team to reuse, you pulled out the parameters, wrote down the assumptions, and bundled the eval. The parameters show the asset can be configured rather than rewritten. The documented assumptions tell the maintainer what environment the asset expects. The bundled eval gives them a way to confirm it still works. An asset packaged for internal reuse is already close to what a maintainer needs to accept it.
-
 **Contributing Back — Revision Notes**
 
 - **Goal:** Move a packaged asset from private reuse into a channel maintainers accept.
